@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package crypto.v1;
+
+// The message representing a cryptocurrency.
+message Crypto {
+  string name = 1;
+  string price = 2;
+}
+
+// Request to get one specific cryptocurrency.
+message GetCryptoByNameRequest {
+  string name = 1;
+}
+
+// Response containing a single cryptocurrency.
+message GetCryptoByNameResponse {
+  Crypto crypto = 1;
+}
+
+// Request to list all cryptocurrencies.
+message ListCryptosRequest {
+  string name_filter = 1; // Optional filter string
+}
+
+// Response containing a list of cryptocurrencies.
+message ListCryptosResponse {
+  repeated Crypto cryptos = 1;
+}
+
+// Service definition.
+service CryptoService {
+  // Get a single crypto by name.
+  rpc GetCryptoByName(GetCryptoByNameRequest) returns (GetCryptoByNameResponse);
+
+  // Get a list of cryptos, optionally filtered by name.
+  rpc ListCryptos(ListCryptosRequest) returns (ListCryptosResponse);
+}

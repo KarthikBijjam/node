@@ -1,0 +1,30 @@
+{
+  "name": "nodeex",
+  "version": "1.0.0",
+  "description": "trading app",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "playwright install chromium"
+  },
+    "dependencies": {
+    "express": "^4.21.2",
+    "playwright": "^1.55.0",
+    "playwright-extra": "^4.3.6",
+    "playwright-extra-plugin-stealth": "^0.0.1",
+    "@connectrpc/connect": "^2.1.0",
+    "@connectrpc/connect-express": "^2.1.0",
+    "@bufbuild/protobuf": "^2.7.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.3.1",
+    "nodemon": "^3.1.10",
+    "playwright": "^1.55.0",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2",
+    "@playwright/test": "^1.55.0"
+  }
+}
